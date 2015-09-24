@@ -1,6 +1,9 @@
 module.exports = function () {
  exports.setEventListener = function (callback) {
-  cordova.exec (callback, undefined, "OnDestroy", "setEventListener", [])
+  cordova.exec (callback, function (e) {
+    console.log(e);
+    alert(e);
+  }, "OnDestroy", "setEventListener", [])
  }
  return exports
 } ()
